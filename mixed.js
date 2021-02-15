@@ -17,8 +17,14 @@ function randomID100() {
   return Math.floor(Math.random() * 100);
 }
 
+function randomEmoticon() {
+  let index = 128512 + Math.floor(Math.random() * (128591 - 128512 + 1)); // Create a decimal code between 128512 and 128591 (Emoticon range)
+  return String.fromCodePoint(index);
+}
+
 function createUserName() {
   let userName = "";
+  userName += randomEmoticon() + "  ";
   userName += firstLetterUpperCase(arrayRandomPick(adjectives));
   userName += firstLetterUpperCase(arrayRandomPick(nouns));
   userName += "_" + randomID100();
