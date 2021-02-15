@@ -2,8 +2,10 @@ const fs = require("fs");
 
 let adjectives, nouns;
 
-adjectives = fs.readFileSync("./adjective.txt", "utf8").split("\r\n");
-nouns = fs.readFileSync("./noun.txt", "utf8").split("\r\n");
+adjectives = fs
+  .readFileSync("./ressources/adjective.txt", "utf8")
+  .split("\r\n");
+nouns = fs.readFileSync("./ressources/noun.txt", "utf8").split("\r\n");
 
 function arrayRandomPick(array) {
   return array[Math.floor(Math.random() * array.length)];
